@@ -1,6 +1,5 @@
 <template>
-  <HelloWorld />
-  <Test />
+  <HelloWorld msg="hello vite"/>
 </template>
 
 <script lang="ts" setup>

@@ -3,6 +3,7 @@ import { App } from 'vue'
 // 方法1：正则获取文件路径中文件名，组件同名
 function getComponentName1(path: string): string|false  {
   const reg: RegExp = /(?<=\.\.\/components\/).+(?=\.vue)/
+  console.log(path.match(reg))
   const res: any = path.match(reg)
   if (res.length) {
     return res[0]

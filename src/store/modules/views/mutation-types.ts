@@ -1,0 +1,4 @@
+export enum MutationTypes {
+  ADD_VISITED_VIEW = 'ADD_VISITED_VIEW',
+  ADD_VISITED_VIEWS ='ADD_VISITED_VIEWS'
+}
