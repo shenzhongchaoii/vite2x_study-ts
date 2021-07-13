@@ -1,14 +1,17 @@
 {
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "cross-env NODE_ENV=development vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "element-plus": "^1.0.2-beta.55",
+    "lodash": "^4.17.21",
     "mockjs": "^1.1.0",
+    "qs": "^6.10.1",
+    "sass-loader": "^12.1.0",
     "vue": "^3.0.5",
     "vue-router": "^4.0.10",
     "vuex": "^4.0.2"

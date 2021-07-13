@@ -5,13 +5,17 @@ declare module '*.vue' {
   export default component
 }
 
-declare module 'apis'
-declare module 'components'
-declare module 'layouts'
-declare module 'mixins'
-declare module 'plugins'
-declare module 'router'
+// declare module 'apis'
+// declare module 'apis/common'
+// declare module 'components'
+// declare module 'layouts'
+// declare module 'mixins'
+// declare module 'plugins'
+// declare module 'router'
 declare module 'store'
-declare module 'styles'
-declare module 'utils'
-declare module 'views'
+// declare module 'styles'
+// declare module 'utils'
+// declare module 'utils/request'
+// declare module 'views'
+
+declare module '*'

@@ -7,8 +7,9 @@ import { ActionTypes } from './store/modules/roles/action-types'
 const store: Store<any> = useStore()
 
 router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  const localUser: string|null = localStorage.getItem('user')
-  const user = JSON.parse(localUser||"''")
+  const localUser: any = localStorage.getItem('user')
+  const user = JSON.parse(localUser)
+
   if (!localUser || (localUser && !user.authorization)) {
     if (to.path == '/login') {
       next()
@@ -20,8 +21,7 @@ router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, n
   } else {
     if (store.state.roles.menus.length === 0) {
       store.dispatch(ActionTypes.SET_MENUS).then(() => {
-        // next({ path: to.path })
-        next({ path: '/' })
+        next({ path: to.path })
       })
     } else {
       next()

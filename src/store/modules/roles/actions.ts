@@ -1,7 +1,7 @@
 import { ActionTree, ActionContext } from 'vuex'
 
 import { RootState } from '../../index'
-import { RolesState, Menus } from './state'
+import { RolesState, Menus, RouteLocationBase } from './state'
 
 import { ActionTypes } from './action-types'
 import { MutationTypes } from './mutation-types'
@@ -40,7 +40,7 @@ export interface Actions {
 }
 
 const  handleMenus = (list: Menus) => {
-  list.forEach((listItem: any) => {
+  list.forEach((listItem: RouteLocationBase) => {
     listItem.component = () => import( /* @vite-ignore */ listItem.url)
     if (listItem.children) {
       handleMenus(listItem.children)
@@ -53,10 +53,9 @@ export const actions: ActionTree<RolesState, RootState> & Actions = {
     // 获取后台给的权限菜单数组
     const res = await CommonService.get('/getMenus')
     const menus = res.data
-    
     handleMenus(menus)
     menus.forEach((item: { [key: string]: any }) => {
-      // router.addRoute(item)
+      router.addRoute(item)
     })
     commit(MutationTypes.SET_MENUS, menus)
   },

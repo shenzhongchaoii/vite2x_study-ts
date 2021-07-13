@@ -7,7 +7,6 @@ const debug: boolean = import.meta.env.VITE_BASE_API !== 'production'
 export interface RootState {
   roles: RolesState,
   views: ViewsState
-
 }
 
 export const store: Store<any> = createStore({

@@ -1,41 +1,26 @@
 <template>
-  <h1>{{ msg }}</h1>
-  <el-button>my button</el-button>
+  <h1>中间propsID----{{ props.id }}</h1>
 
-  <button type="button" @click="count++">count is: {{ count }}</button>
+  <Test v-model:id="props.id" @updateID="$emit('update:id', $event)" />
 </template>
 
-<script lang="ts">
-import { ref, defineComponent } from 'vue'
-export default defineComponent({
-  name: 'HelloWorld',
-  props: {
-    msg: {
-      type: String,
-      required: true
-    }
-  },
-  setup: () => {
-    const count = ref(0)
-    return { count }
+<script lang="ts" setup>
+import { defineProps, defineEmits, watch } from 'vue'
+
+const props = defineProps({
+  id: {
+    type: Number,
+    default: 0
   }
 })
+const emit = defineEmits(['update:id'])
+
+watch(() => props.id, val => {
+  console.log('helloworld val', val)
+})
+
 </script>
 
 <style scoped>
-a {
-  color: #42b983;
-}
 
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
-}
 </style>
