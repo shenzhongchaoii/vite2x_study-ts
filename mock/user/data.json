@@ -1,23 +1,5 @@
 [
   {
-    "id": 19,
-    "realname": "易傻猪",
-    "username": "15870808989",
-    "password": "123456789",
-    "age": 18,
-    "address": "猪圈",
-    "deleted": 0
-  },
-  {
-    "id": 18,
-    "realname": "沈智障",
-    "username": "15766645742",
-    "password": "szzszhhh",
-    "age": 99,
-    "address": "流落",
-    "deleted": 0
-  },
-  {
     "id": 17,
     "realname": "小明",
     "username": "xiaoming",
