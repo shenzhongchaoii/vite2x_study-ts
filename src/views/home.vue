@@ -15,12 +15,13 @@ import { useRouter, useRoute } from 'vue-router'
 
 onMounted(() => {
   console.log('onMounted')
+  console.log(12323)
 })
 
 const router = useRouter()
 const route = useRoute()
 
-let id = ref(1008611)
+let id = ref(1008612)
 
 provide('provideID', id)
 

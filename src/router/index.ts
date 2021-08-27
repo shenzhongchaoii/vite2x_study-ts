@@ -9,6 +9,7 @@ export const routes = [
     component: () => import('../login.vue')
   }
 ]
+
 const router: Router = createRouter({
   history: createWebHashHistory(),
   routes: [ ...routes, ...store.state.roles.menus ]
